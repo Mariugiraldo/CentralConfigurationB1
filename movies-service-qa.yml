@@ -1,0 +1,4 @@
+server:
+  port: ${PORT:${SERVER_PORT:8083}}
+  
+message: Movies configuration server is alive for QA!   
