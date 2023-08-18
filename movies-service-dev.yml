@@ -1,4 +1,26 @@
 server:
   port: ${PORT:${SERVER_PORT:8081}}
+
+  datasource:
+    driverClassName: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3370/movie-dev
+    username: usr-movie
+    password: pwd-movie
+  jpa:
+    hibernate.ddl-auto: update
+    generate-ddl: true
+    show-sql: true
+
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: info,health
+
   
 message: Movies configuration server is alive for DEV!   
