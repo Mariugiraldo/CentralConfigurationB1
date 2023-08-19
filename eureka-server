@@ -1,4 +1,22 @@
 server:
-  port: ${PORT:${SERVER_PORT:8083}}
+  port: ${PORT:${SERVER_PORT:8761}}
   
-message: Movies configuration server is alive for QA!   
+spring:
+  application:
+    name: eureka-server
+
+
+eureka:
+  client:
+    register-with-eureka: false
+    fetch-registry: false
+    registry-fetch-interval-seconds: 5
+    healthcheck:
+      enabled: true
+    service-url:
+      default-zone: http://localhost:8761/eureka
+  instance:
+    prefer-ip-address: true
+    
+    
+message: EurekaServer is registred on configuration
